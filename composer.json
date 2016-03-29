@@ -1,0 +1,20 @@
+{
+    "name": "lspbupt/yii2-jpush",
+    "description": "a jpush encapsulation for yii2",
+    "keywords": ["yii2", "extension", "jpush"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "李仕鹏",
+            "email": "lishipeng@honglinjin.xyz"
+        }
+    ],
+    "require": {
+        "jpush/jpush": "v3.3.8" 
+    },
+    "autoload": {
+        "psr-4": {
+            "lspbupt\\jpush\\": ""
+        }
+    }
+}
