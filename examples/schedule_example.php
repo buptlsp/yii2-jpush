@@ -4,9 +4,11 @@
  * HTTP API文档:http://docs.jpush.io/server/rest_api_push_schedule/
  * PHP API文档:https://github.com/jpush/jpush-api-php-client/blob/master/doc/api.md#schedule-api
  */
+require(__DIR__ . '/../vendor/autoload.php');
+require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
+require_once("../JPush.php");
 ini_set("display_errors", "On");
 error_reporting(E_ALL | E_STRICT);
-require_once("../JPush.php");
 
 $br = '<br/>';
 $app_key = 'dd1066407b044738b6479275';

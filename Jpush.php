@@ -1,7 +1,8 @@
 <?php
 namespace lspbupt\Jpush;
-use yii\base\Component;
-use yii\base\InvalidConfigException;
+use \Yii;
+use \yii\base\Component;
+use \yii\base\InvalidConfigException;
 
 class Jpush extends Component
 {
@@ -18,14 +19,14 @@ class Jpush extends Component
     public function init()
     {
         parent::init();
-        if(empty($this->appkey) || empty($this->app_secret)) {
-            throw new InvalidParamException("app_key和app_secret必须设置"); 
+        if(empty($this->app_key) || empty($this->app_secret)) {
+            throw new InvalidConfigException("app_key和app_secret必须设置"); 
         }
-        $this->jpush = new \jpush\jpush\JPush($app_key, $app_secret);
+        $this->jpush = new \JPush($this->app_key, $this->app_secret);
     }
     
     public function __call($method, $args = [])
     {
-        return call_user_func_array(array($this->soundcloud, $method), $args);
+        return call_user_func_array(array($this->jpush, $method), $args);
     }
 }
